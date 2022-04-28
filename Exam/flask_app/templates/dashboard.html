@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Bands</title>
+</head>
+<body>
+    <a href="/band/show/{{ user.id }}">My Band</a> | <a href="/band/new">New Band</a> | <a href="/logout">Logout</a>
+    <!-- {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %} -->
+    <h1>Rock On, {{ user.first_name }} {{ user.last_name }}</h1>
+    <h2>All Bands</h2>
+    {% for band in all_bands %}
+    <h3>Band Name: {{ band.band_name }}</h3>
+    <h3>Founding Member: {{ band.singer.first_name }}</h3>
+    <h3>Genre: {{ band.genre }}</h3>
+    <h3>--------------------------------------------------------------------------------------</h3>
+    {% endfor %}
+
+
+
+    
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Band</title>
+</head>
+<body>
+    <a href="/dashboard">Dashboard</a> | <a href="/logout">Logout</a>
+        {% with messages = get_flashed_messages() %}
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{message}}</p>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+    <h1>Create A Band</h1>
+    <form action="/band/create" method="post">
+        <p>Band Name:
+            <input type="text" name="band_name">
+        </p>
+        <p>Music Genre:
+            <input type="text" name="genre">
+        </p>
+        <p>Home City:
+            <input type="text" name="home_city">
+        </p>
+
+        <input type="submit" value="Create">
+        </form>
+</body>
+</html>
